@@ -1,0 +1,6 @@
+/* Scoped styling for App.jsx if needed */
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
