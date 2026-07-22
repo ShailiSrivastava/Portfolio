@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, Mail, Phone, Download } from 'lucide-react';
 import { Github, Linkedin } from './Icons';
 import { PERSONAL_INFO } from '../data/portfolioData';
-import shailiPortrait from '../assets/shaili.jpg';
+import shailiPortrait from '../assets/shaili.jpg'; // updated portrait asset
 
 export default function Hero() {
   return (
