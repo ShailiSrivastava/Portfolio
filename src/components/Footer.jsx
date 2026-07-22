@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, ArrowUp, ExternalLink, Heart } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowUp, ExternalLink, Download, FileText } from 'lucide-react';
 import { Github, Linkedin } from './Icons';
 import { PERSONAL_INFO, PROJECTS_DATA } from '../data/portfolioData';
 
@@ -32,7 +32,7 @@ export default function Footer() {
               <span className="logo-symbol"> /&gt;</span>
             </a>
             <p className="footer-brand-desc">
-              Computer Science undergraduate & Full-Stack Developer specializing in building REST APIs, AI vector search, and web interfaces.
+              Computer Science undergraduate & Computer Vision Engineer specializing in YOLOv11, OpenCV, FastAPI, React, and RAG architectures.
             </p>
 
             <div className="footer-status-tag">
@@ -80,10 +80,20 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Direct Connections */}
+          {/* Column 4: Direct Connections & Download Resume */}
           <div className="footer-col">
             <h4 className="footer-col-title">Direct Connections</h4>
             <ul className="footer-contact-list">
+              <li>
+                <a
+                  href={PERSONAL_INFO.resumeUrl}
+                  download="Shaili_Srivastava_Resume.pdf"
+                  className="footer-contact-item footer-cv-highlight"
+                >
+                  <FileText size={14} />
+                  <span>Download Resume (PDF)</span>
+                </a>
+              </li>
               <li>
                 <a href={`mailto:${PERSONAL_INFO.email}`} className="footer-contact-item">
                   <Mail size={14} />
@@ -133,6 +143,15 @@ export default function Footer() {
           </div>
 
           <div className="footer-right-actions">
+            <a
+              href={PERSONAL_INFO.resumeUrl}
+              download="Shaili_Srivastava_Resume.pdf"
+              className="back-to-top-btn footer-download-btn"
+            >
+              <Download size={14} />
+              <span>DOWNLOAD CV</span>
+            </a>
+
             <button onClick={scrollToTop} className="back-to-top-btn" aria-label="Back to top">
               <span>BACK TO TOP</span>
               <ArrowUp size={14} />

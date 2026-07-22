@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Mail, Phone } from 'lucide-react';
+import { ArrowRight, Mail, Phone, Download } from 'lucide-react';
 import { Github, Linkedin } from './Icons';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
@@ -29,15 +29,21 @@ export default function Hero() {
             </h2>
 
             <p className="hero-editorial-description">
-              Computer Science undergraduate with strong foundations in OOP, Data Structures & Algorithms
-              <strong> ({PERSONAL_INFO.dsaCount} problems solved)</strong>, and Full-Stack Development. Skilled in building REST APIs and
-              production-ready web apps using Java, JavaScript, Python, React.js, Node.js, FastAPI, and Docker.
-              Quick learner experienced in Agile collaboration and Git workflows.
+              Computer Science undergraduate and Computer Vision Engineer with hands-on experience in Deep Learning, Computer Vision,
+              and Full-Stack Development. Built real-time AI applications using Python, YOLOv11, OpenCV, Flask, React.js, Next.js, and FastAPI.
+              Strong foundation in OOP, Data Structures & Algorithms <strong>({PERSONAL_INFO.dsaCount} problems solved)</strong>.
             </p>
 
             <div className="hero-cta-group">
               <a href="#projects" className="btn btn-primary">
                 View Projects <ArrowRight size={16} />
+              </a>
+              <a
+                href={PERSONAL_INFO.resumeUrl}
+                download="Shaili_Srivastava_Resume.pdf"
+                className="btn btn-secondary"
+              >
+                <Download size={16} /> Download CV
               </a>
               <a href="#contact" className="btn btn-secondary">
                 Contact Me
@@ -51,7 +57,7 @@ export default function Hero() {
               <div className="portrait-image-wrapper">
                 <img
                   src="/shaili.jpg"
-                  alt="Shaili Srivastava - Full Stack Developer"
+                  alt="Shaili Srivastava - Full Stack Developer & Computer Vision Engineer"
                   className="hero-portrait-img"
                 />
               </div>
@@ -66,8 +72,8 @@ export default function Hero() {
                   <span className="row-val">B.Tech Computer Science</span>
                 </div>
                 <div className="editorial-row">
-                  <span className="row-key">Location</span>
-                  <span className="row-val">{PERSONAL_INFO.location}</span>
+                  <span className="row-key">Specialization</span>
+                  <span className="row-val">Computer Vision & AI Engineering</span>
                 </div>
                 <div className="editorial-row">
                   <span className="row-key">Problem Solved</span>
@@ -75,7 +81,7 @@ export default function Hero() {
                 </div>
                 <div className="editorial-row">
                   <span className="row-key">Main Stack</span>
-                  <span className="row-val">React, Node.js, FastAPI, Docker</span>
+                  <span className="row-val">YOLOv11, OpenCV, PyTorch, React, FastAPI</span>
                 </div>
               </div>
 

@@ -1,10 +1,20 @@
 import React from 'react';
-import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Download, ArrowUpRight, FileText } from 'lucide-react';
 import { Github, Linkedin } from './Icons';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export default function Contact() {
   const connectionLinks = [
+    {
+      title: 'Curriculum Vitae',
+      label: 'Shaili Srivastava Resume (PDF)',
+      href: PERSONAL_INFO.resumeUrl,
+      icon: <FileText size={22} />,
+      type: 'Downloadable PDF',
+      actionText: 'Download CV',
+      download: 'Shaili_Srivastava_Resume.pdf',
+      isFeatured: true
+    },
     {
       title: 'Email',
       label: PERSONAL_INFO.email,
@@ -45,14 +55,14 @@ export default function Contact() {
     <section id="contact" className="contact-section">
       <div className="container reveal">
         <div className="chapter-header-rule">
-          <span className="chapter-index-badge">06 — CONTACT</span>
+          <span className="chapter-index-badge">06 — CONTACT & RESUME</span>
           <span className="chapter-rule-line"></span>
         </div>
 
         <div className="section-editorial-heading">
           <h2 className="editorial-section-title">Get In Touch</h2>
           <p className="editorial-section-subtext">
-            Feel free to reach out via email, phone, or connect through GitHub and LinkedIn.
+            Download my updated resume PDF or reach out directly via email, phone, GitHub, and LinkedIn.
           </p>
         </div>
 
@@ -62,9 +72,10 @@ export default function Contact() {
             <a
               key={idx}
               href={link.href}
+              download={link.download || undefined}
               target={link.isExternal ? '_blank' : '_self'}
               rel={link.isExternal ? 'noopener noreferrer' : ''}
-              className="glass-panel connection-hub-card"
+              className={`glass-panel connection-hub-card ${link.isFeatured ? 'featured-cv-card' : ''}`}
             >
               <div className="connection-card-top">
                 <div className="connection-icon-box">{link.icon}</div>
@@ -80,7 +91,11 @@ export default function Contact() {
                 <span className="connection-action-text">
                   {link.actionText}
                 </span>
-                <ArrowUpRight size={16} className="connection-arrow-icon" />
+                {link.download ? (
+                  <Download size={16} className="connection-arrow-icon" />
+                ) : (
+                  <ArrowUpRight size={16} className="connection-arrow-icon" />
+                )}
               </div>
             </a>
           ))}

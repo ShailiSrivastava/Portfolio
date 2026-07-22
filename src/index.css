@@ -1725,3 +1725,48 @@ input:focus, textarea:focus {
     text-align: center;
   }
 }
+
+/* DOWNLOAD CV BUTTON STYLES */
+.btn-download-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 4px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid var(--btn-border);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-download-cv:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.mobile-cv-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 6px;
+}
+
+.featured-cv-card {
+  border-color: var(--card-border-hover) !important;
+  background: var(--pill-bg) !important;
+}
+
+.footer-cv-highlight {
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+}
+
+.footer-download-btn {
+  margin-right: 8px;
+  text-decoration: none;
+}

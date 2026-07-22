@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Mail } from 'lucide-react';
+import { Menu, X, Mail, Download } from 'lucide-react';
 import { Github, Linkedin, Sun, Moon } from './Icons';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
@@ -48,8 +48,18 @@ export default function Navbar({ activeSection, theme, toggleTheme }) {
           ))}
         </div>
 
-        {/* Social & Theme Switcher (Desktop) */}
+        {/* Social, Theme Switcher & Download CV Button (Desktop) */}
         <div className="nav-socials-desktop">
+          <a
+            href={PERSONAL_INFO.resumeUrl}
+            download="Shaili_Srivastava_Resume.pdf"
+            className="btn-download-cv"
+            title="Download Shaili Srivastava Resume"
+          >
+            <Download size={14} />
+            <span>Download CV</span>
+          </a>
+
           <button
             className="theme-toggle-btn"
             onClick={toggleTheme}
@@ -85,6 +95,16 @@ export default function Navbar({ activeSection, theme, toggleTheme }) {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="nav-menu-mobile glass-panel">
+          <a
+            href={PERSONAL_INFO.resumeUrl}
+            download="Shaili_Srivastava_Resume.pdf"
+            className="btn-download-cv mobile-cv-btn"
+            onClick={() => setIsOpen(false)}
+          >
+            <Download size={16} />
+            <span>Download Resume PDF</span>
+          </a>
+
           <button
             className="theme-toggle-btn mobile-theme-btn"
             onClick={toggleTheme}
@@ -93,6 +113,7 @@ export default function Navbar({ activeSection, theme, toggleTheme }) {
             {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             <span>SWITCH TO {theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE'}</span>
           </button>
+
           {navLinks.map((link) => (
             <a
               key={link.name}
