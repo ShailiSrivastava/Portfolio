@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Mail, Phone, Download } from 'lucide-react';
 import { Github, Linkedin } from './Icons';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import shailiPortrait from '../assets/shaili.jpg';
 
 export default function Hero() {
   return (
@@ -56,7 +57,7 @@ export default function Hero() {
             <div className="glass-panel editorial-portrait-card">
               <div className="portrait-image-wrapper">
                 <img
-                  src="/shaili.jpg"
+                  src={shailiPortrait}
                   alt="Shaili Srivastava - Full Stack Developer & Computer Vision Engineer"
                   className="hero-portrait-img"
                 />
